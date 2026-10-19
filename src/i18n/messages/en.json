@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "courses": "Courses",
+    "about": "About",
+    "contact": "Contact",
+    "downloadCv": "Download CV"
+  },
+  "hero": {
+    "hello": "Hello, I'm",
+    "nameFirst": "Salman",
+    "nameLast": "Al-Ansi",
+    "title": "AI Engineer, Web & Mobile App Developer",
+    "description": "I build intelligent solutions, modern web apps, and cross-platform mobile applications powered by AI and cutting-edge technologies.",
+    "exploreWork": "Explore My Work",
+    "contactMe": "Contact Me",
+    "downloadCv": "Download CV",
+    "statProjects": "Projects",
+    "statCourses": "Courses",
+    "statExperience": "Years Experience",
+    "statOpen": "Open to Opportunities",
+    "currentlyLearning": "Currently Learning",
+    "handwrittenHero": "Better Code Better Products"
+  },
+  "valueProps": {
+    "prop1Title": "Clean Code",
+    "prop1Subtitle": "Better Products",
+    "prop1Desc": "Maintainable, scalable and well-structured code.",
+    "prop2Title": "Modern Stack",
+    "prop2Subtitle": "Real-World Solutions",
+    "prop2Desc": "Using modern tools and best practices.",
+    "prop3Title": "Problem Solver",
+    "prop3Subtitle": "Turning ideas into products",
+    "prop3Desc": "I love solving real problems with simple solutions.",
+    "prop4Title": "Continuous Learner",
+    "prop4Subtitle": "Always Exploring",
+    "prop4Desc": "Always learning new technologies and sharing knowledge."
+  },
+  "about": {
+    "heading": "About Me",
+    "getToKnowMe": "Get to know me",
+    "bio": "I am Salman Al-Ansi, an AI Engineer, Web and Mobile Developer passionate about creating intelligent solutions and solving complex problems. I integrate AI technologies into web and mobile platforms to deliver unique, smart user experiences.",
+    "point1": "AI Models & Intelligent Solutions",
+    "point2": "Web Development with Next.js & React",
+    "point3": "Mobile App Development (Android & iOS)",
+    "point4": "AI Integration in Software Systems",
+    "point5": "Smart & Intuitive UI/UX Design",
+    "myJourney": "My Journey",
+    "watchVideo": "Watch Video (1:29)",
+    "handwrittenAbout": "Code · Learn · Build · Repeat"
+  },
+  "techStack": {
+    "heading": "Tech Stack",
+    "subheading": "Technologies I work with",
+    "viewAll": "View All",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devopsTools": "DevOps & Tools"
+  },
+  "projects": {
+    "heading": "Featured Projects",
+    "viewAll": "View All Projects",
+    "viewProject": "View Project",
+    "allProjectsTitle": "All Projects & Engineering Work",
+    "searchPlaceholder": "Search projects by title or tech...",
+    "filterCategory": "Category",
+    "allCategories": "All Categories",
+    "noResults": "No projects found matching your criteria.",
+    "clearFilters": "Clear Filters",
+    "resultsFound": "projects found",
+    "modalHighlights": "Key Technical Highlights",
+    "modalTechUsed": "Technologies Used",
+    "modalLiveDemo": "Live Preview",
+    "modalSourceCode": "Source Code",
+    "closeModal": "Close"
+  },
+  "courses": {
+    "heading": "Learn & Grow",
+    "subheading": "Explore a collection of courses and tutorials to improve your skills.",
+    "viewAll": "View All Courses",
+    "viewCourse": "View Course",
+    "allCoursesTitle": "All Courses & Learning Tracks",
+    "searchPlaceholder": "Search courses or topics...",
+    "filterDifficulty": "Difficulty",
+    "allDifficulties": "All Levels",
+    "lessons": "Lessons",
+    "hours": "hours",
+    "noResults": "No courses found matching your criteria.",
+    "clearFilters": "Clear Filters",
+    "resultsFound": "courses found",
+    "modalSyllabus": "Course Syllabus",
+    "modalLevel": "Difficulty Level",
+    "modalDuration": "Estimated Duration",
+    "startCourse": "Start Learning",
+    "closeModal": "Close"
+  },
+  "testimonials": {
+    "heading": "What Clients & Colleagues Say",
+    "subheading": "Feedback from people I've worked with"
+  },
+  "contact": {
+    "bannerNumber": "01",
+    "bannerTitle": "Let's Build Something Great",
+    "bannerSubtitle": "Have a project in mind or just want to say hello? I'd love to hear from you.",
+    "bannerArabicMotto": "أفكار اليوم .. مشاريع الغد",
+    "bannerEnglishMotto": "Ideas Today .. Real Projects Tomorrow",
+    "contactMeBtn": "Contact Me",
+    "viewCvBtn": "View CV",
+    "getInTouch": "Get in Touch",
+    "openToOpp": "I'm always open to new opportunities.",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "chatWhatsApp": "Chat on WhatsApp",
+    "handwrittenContact": "Open to Opportunities Worldwide"
+  },
+  "cvModal": {
+    "title": "Curriculum Vitae",
+    "subtitle": "Download or preview verified resume",
+    "downloadEn": "Download English CV (PDF)",
+    "downloadAr": "Download Arabic CV (PDF)",
+    "previewNotice": "This is an official profile document. Replace with your customized PDF asset.",
+    "close": "Close"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "madeWith": "Crafted with passion for clean code and performance."
+  }
+}

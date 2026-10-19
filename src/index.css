@@ -1,0 +1,57 @@
+/* الملف: index.css */
+/* الوظيفة: ملف الأنماط العام للموقع (Tailwind v4 + الخطوط + تنسيق شريط التمرير). */
+/* المحتوى: استيراد tailwindcss، والخطوط Cairo و Plus Jakarta Sans و Caveat، ومتغيرات RTL/LTR. */
+/* الاعتماديات: tailwindcss v4، ويُستورد من src/app/layout.tsx. */
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-arabic: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-handwriting: 'Caveat', cursive, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html[dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+
+  html[dir="ltr"] {
+    font-family: var(--font-sans);
+  }
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+.font-sans-en {
+  font-family: var(--font-sans);
+}
+
+/* Custom scrollbar for subtle aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.6);
+}
