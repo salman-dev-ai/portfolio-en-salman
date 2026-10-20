@@ -1,16 +1,15 @@
 // الملف: filters.test.ts
 // الوظيفة: اختبارات وحدة لدوال التصفية والاستخراج باستخدام node:test
-// المحتوى: بيانات وهمية mockProjects و mockCourses وستة اختبارات للنتائج المتوقعة
+// المحتوى: بيانات وهمية mockProjects وأربعة اختبارات للنتائج المتوقعة
 // الاعتماديات: يستورد node:test و node:assert/strict ودوال filters.ts وأنواع portfolio
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   filterProjects,
-  filterCourses,
   getUniqueProjectCategories,
   getUniqueProjectTechnologies,
 } from './filters.ts';
-import type { Project, Course } from '../types/portfolio.ts';
+import type { Project } from '../types/portfolio.ts';
 
 const mockProjects: Project[] = [
   {
@@ -51,37 +50,6 @@ const mockProjects: Project[] = [
   },
 ];
 
-const mockCourses: Course[] = [
-  {
-    id: 'c1',
-    slug: 'nextjs-mastery',
-    title: { en: 'Next.js Mastery', ar: 'احتراف نكست' },
-    category: { en: 'Frontend', ar: 'واجهات' },
-    difficulty: 'Beginner',
-    lessonsCount: 12,
-    durationHours: 6,
-    shortDescription: { en: 'Learn Next.js from scratch', ar: 'تعلم نكست' },
-    fullDescription: { en: 'Full desc', ar: 'وصف' },
-    thumbnail: '/course1.jpg',
-    featured: true,
-    syllabus: { en: ['M1'], ar: ['و1'] },
-  },
-  {
-    id: 'c2',
-    slug: 'react-advanced',
-    title: { en: 'React Advanced', ar: 'رياكت متقدم' },
-    category: { en: 'Frontend', ar: 'واجهات' },
-    difficulty: 'Intermediate',
-    lessonsCount: 8,
-    durationHours: 4,
-    shortDescription: { en: 'Master hooks and performance', ar: 'احترف الهوكس' },
-    fullDescription: { en: 'Full desc', ar: 'وصف' },
-    thumbnail: '/course2.jpg',
-    featured: true,
-    syllabus: { en: ['M1'], ar: ['و1'] },
-  },
-];
-
 test('filterProjects filters by search query matching english title', () => {
   const result = filterProjects(mockProjects, { searchQuery: 'commerce' });
   assert.equal(result.length, 1);
@@ -107,16 +75,6 @@ test('filterProjects filters by technology', () => {
   const result = filterProjects(mockProjects, { technology: 'Docker' });
   assert.equal(result.length, 1);
   assert.equal(result[0].slug, 'cicd');
-});
-
-test('filterCourses filters by difficulty', () => {
-  const beginners = filterCourses(mockCourses, { difficulty: 'Beginner' });
-  assert.equal(beginners.length, 1);
-  assert.equal(beginners[0].slug, 'nextjs-mastery');
-
-  const intermediates = filterCourses(mockCourses, { difficulty: 'Intermediate' });
-  assert.equal(intermediates.length, 1);
-  assert.equal(intermediates[0].slug, 'react-advanced');
 });
 
 test('getUniqueProjectCategories and Technologies return distinct lists', () => {

@@ -300,8 +300,8 @@ export const AboutAndTechSection: React.FC<AboutAndTechSectionProps> = ({
                   <img
                     src="/assets/images/about_developer_work_1792383940477.jpg"
                     alt="Salman Al-Ansi at work"
-                    className="w-full h-44 object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
+                    className="w-full h-44 object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+                 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-3">
                     <button
                       type="button"

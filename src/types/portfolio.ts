@@ -1,6 +1,6 @@
 // الملف: portfolio.ts
-// الوظيفة: تعريف الأنواع الأساسية لبيانات المشاريع والدورات والتقنيات والشهادات
-// المحتوى: Project و Course و TechnologyItem و Testimonial والنوع CourseDifficulty
+// الوظيفة: تعريف الأنواع الأساسية لبيانات المشاريع والتقنيات والشهادات
+// المحتوى: Project و TechnologyItem و Testimonial
 // الاعتماديات: ملف أنواع مستقل بلا استيرادات خارجية
 export interface Project {
   id: string;
@@ -27,38 +27,6 @@ export interface Project {
   githubUrl?: string;
   featured: boolean;
   highlights: {
-    en: string[];
-    ar: string[];
-  };
-}
-
-export type CourseDifficulty = 'Beginner' | 'Intermediate' | 'Advanced';
-
-export interface Course {
-  id: string;
-  slug: string;
-  title: {
-    en: string;
-    ar: string;
-  };
-  category: {
-    en: string;
-    ar: string;
-  };
-  difficulty: CourseDifficulty;
-  lessonsCount: number;
-  durationHours: number;
-  shortDescription: {
-    en: string;
-    ar: string;
-  };
-  fullDescription: {
-    en: string;
-    ar: string;
-  };
-  thumbnail: string;
-  featured: boolean;
-  syllabus: {
     en: string[];
     ar: string[];
   };

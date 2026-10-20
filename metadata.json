@@ -2,7 +2,5 @@
   "name": "Salman Al-Ansi Portfolio",
   "description": "Personal portfolio of Salman Al-Ansi, AI Engineer, Web Developer & Mobile App Developer.",
   "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "majorCapabilities": []
 }

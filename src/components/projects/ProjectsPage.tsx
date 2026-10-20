@@ -21,18 +21,15 @@ import {
   Code2,
   FolderGit2,
   CheckCircle2,
-  MessageSquare
 } from 'lucide-react';
 
 interface ProjectsPageProps {
   onBackToHome: () => void;
-  onOpenAgent?: () => void;
   onOpenCvModal?: () => void;
 }
 
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({
   onBackToHome,
-  onOpenAgent,
   onOpenCvModal,
 }) => {
   const { t, locale, dir } = useLanguage();
@@ -386,22 +383,12 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
             </h3>
             <p className="text-xs sm:text-sm text-gray-300 max-w-xl">
               {isRtl
-                ? 'يمكنك التحدث مباشرة مع وكيل سلمان الذكي للاستفسار عن الإتاحة ونطاق العمل، أو طلب استشارة تقنية.'
-                : 'Connect with Salman Al-Ansi or inquire through the AI Agent regarding availability, project scopes, and engineering consulting.'}
+                ? 'يمكنك التواصل مباشرة مع المهندس سلمان للاستفسار عن الإتاحة ونطاق العمل، أو طلب استشارة تقنية.'
+                : 'Connect directly with Salman Al-Ansi to discuss availability, project scope, and engineering consulting.'}
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
-            {onOpenAgent && (
-              <button
-                type="button"
-                onClick={onOpenAgent}
-                className="flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-[#FF641C] hover:bg-[#E05312] rounded-full shadow-lg shadow-[#FF641C]/30 transition-all cursor-pointer"
-              >
-                <MessageSquare className="w-4 h-4" />
-                <span>{isRtl ? 'اسأل الوكيل الذكي' : 'Talk with AI Agent'}</span>
-              </button>
-            )}
             <button
               type="button"
               onClick={onBackToHome}

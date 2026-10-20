@@ -82,9 +82,13 @@ export const JourneyVideoModal: React.FC<JourneyVideoModalProps> = ({
 
         {/* Video Canvas / Player Showcase */}
         <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-black border border-[#1E2630] flex flex-col justify-between p-4 group">
-          <img
-            src="/assets/images/about_developer_work_1792383940477.jpg"
-            alt="Salman developer workspace"
+          <video
+            src="/assets/videos/salman_alansi_profile.mp4"
+            autoPlay={isPlaying}
+            muted
+           
+            // ="/assets/images/about_developer_work_1792383940477.jpg"
+            // alt="Salman developer workspace"
             className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>

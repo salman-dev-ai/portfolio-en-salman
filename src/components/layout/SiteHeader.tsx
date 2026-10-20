@@ -16,7 +16,6 @@ interface SiteHeaderProps {
   onNavigateProjects: () => void;
   onNavigateCourses: () => void;
   onOpenCvModal: () => void;
-  onOpenAgent?: () => void;
 }
 
 type NavKey = 'home' | 'projects' | 'courses' | 'about' | 'contact';
@@ -33,7 +32,6 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
   onNavigateProjects,
   onNavigateCourses,
   onOpenCvModal,
-  onOpenAgent,
 }) => {
   const { locale, toggleLocale, t, dir } = useLanguage();
   const { theme, toggleTheme } = useTheme();
@@ -479,21 +477,6 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
                 {item.key === 'projects' || item.key === 'courses' ? ` ${locale === 'ar' ? ' ' : '(Page)'}` : ''}
               </button>
             ))}
-
-            {onOpenAgent && (
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenAgent();
-                }}
-                className={`sh-di flex items-center gap-2 w-full text-start py-3 px-2 rounded-lg text-[#FF641C] font-bold ${FOCUS}`}
-                style={{ '--i': navItems.length } as React.CSSProperties}
-              >
-                <span className="w-2 h-2 rounded-full bg-emerald-400" aria-hidden="true"></span>
-                <span>{locale === 'ar' ? 'محادثة الوكيل الذكي' : 'Chat with AI Agent'}</span>
-              </button>
-            )}
 
             <div
               className="sh-di pt-3 mt-2 border-t border-[#E8E0D5] dark:border-[#1E2630]"

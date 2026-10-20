@@ -1,8 +1,8 @@
 // الملف: filters.ts
-// الوظيفة: دوال لتصفية المشاريع والدورات حسب الفئة والبحث والتقنية والاستخراج الفريد
-// المحتوى: filterProjects و filterCourses و getUniqueProjectCategories و getUniqueProjectTechnologies
-// الاعتماديات: يستورد الأنواع Project و Course و CourseDifficulty من types/portfolio.ts
-import type { Project, Course, CourseDifficulty } from '../types/portfolio.ts';
+// الوظيفة: دوال لتصفية المشاريع حسب الفئة والبحث والتقنية والاستخراج الفريد
+// المحتوى: filterProjects و getUniqueProjectCategories و getUniqueProjectTechnologies
+// الاعتماديات: يستورد نوع Project من types/portfolio.ts
+import type { Project } from '../types/portfolio.ts';
 
 /**
  * Filter projects by category, search query, and technology
@@ -49,52 +49,6 @@ export function filterProjects(
       );
 
       if (!titleMatch && !descMatch && !techMatch) {
-        return false;
-      }
-    }
-
-    return true;
-  });
-}
-
-/**
- * Filter courses by difficulty, category, and search query
- */
-export function filterCourses(
-  courses: Course[],
-  options: {
-    difficulty?: CourseDifficulty | 'all';
-    category?: string;
-    searchQuery?: string;
-  }
-): Course[] {
-  const { difficulty, category, searchQuery } = options;
-  const normalizedQuery = (searchQuery || '').trim().toLowerCase();
-
-  return courses.filter((course) => {
-    // Difficulty match
-    if (difficulty && difficulty !== 'all') {
-      if (course.difficulty !== difficulty) return false;
-    }
-
-    // Category match
-    if (category && category !== 'all') {
-      const matchCat =
-        course.category.en.toLowerCase() === category.toLowerCase() ||
-        course.category.ar === category;
-      if (!matchCat) return false;
-    }
-
-    // Search query match
-    if (normalizedQuery) {
-      const titleMatch =
-        course.title.en.toLowerCase().includes(normalizedQuery) ||
-        course.title.ar.toLowerCase().includes(normalizedQuery);
-      const descMatch =
-        course.shortDescription.en.toLowerCase().includes(normalizedQuery) ||
-        course.shortDescription.ar.toLowerCase().includes(normalizedQuery);
-
-      if (!titleMatch && !descMatch) {
         return false;
       }
     }

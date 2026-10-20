@@ -16,16 +16,14 @@ import { HeroSection } from './components/home/HeroSection.tsx';
 import { ValuePropositionSection } from './components/home/ValuePropositionSection.tsx';
 import { AboutAndTechSection } from './components/home/AboutAndTechSection.tsx';
 import { FeaturedProjectsSection } from './components/home/FeaturedProjectsSection.tsx';
-import { FeaturedCoursesSection } from './components/home/FeaturedCoursesSection.tsx';
 import { TestimonialSection } from './components/home/TestimonialSection.tsx';
 import { ContactBanner } from './components/home/ContactBanner.tsx';
 import { ProjectsPage } from './components/projects/ProjectsPage.tsx';
 import { CoursesPage } from './components/courses/CoursesPage.tsx';
 import { ProjectModal } from './components/projects/ProjectModal.tsx';
-import { CourseModal } from './components/courses/CourseModal.tsx';
 import { CVModal } from './components/cv/CVModal.tsx';
 import { JourneyVideoModal } from './components/about/JourneyVideoModal.tsx';
- import { Project, Course } from './types/portfolio.ts';
+import { Project } from './types/portfolio.ts';
 
 function PortfolioApp() {
   const { dir } = useLanguage();
@@ -42,10 +40,8 @@ function PortfolioApp() {
 
   // Modal detail states
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [isCvModalOpen, setIsCvModalOpen] = useState(false);
   const [isJourneyVideoOpen, setIsJourneyVideoOpen] = useState(false);
-  const [isAgentChatOpen, setIsAgentChatOpen] = useState(false);
 
   // Sync hash routing with activeView
   useEffect(() => {
@@ -93,10 +89,6 @@ function PortfolioApp() {
     }
   };
 
-  const handleOpenAgent = () => {
-    setIsAgentChatOpen(true);
-  };
-
   return (
     <div
       dir={dir}
@@ -109,7 +101,6 @@ function PortfolioApp() {
         onNavigateProjects={() => navigateTo('projects')}
         onNavigateCourses={() => navigateTo('courses')}
         onOpenCvModal={() => setIsCvModalOpen(true)}
-        onOpenAgent={handleOpenAgent}
       />
 
       {/* Main Content Area (padded for fixed header) */}
@@ -138,12 +129,6 @@ function PortfolioApp() {
               onViewAllProjects={() => navigateTo('projects')}
             />
 
-            {/* Learn & Grow / Featured Courses Section */}
-            <FeaturedCoursesSection
-              onSelectCourse={(course) => setSelectedCourse(course)}
-              onViewAllCourses={() => navigateTo('courses')}
-            />
-
             {/* Testimonial Section with Network Globe */}
             <TestimonialSection />
 
@@ -158,19 +143,16 @@ function PortfolioApp() {
         {activeView === 'projects' && (
           <ProjectsPage
             onBackToHome={() => navigateTo('home')}
-            onOpenAgent={handleOpenAgent}
             onOpenCvModal={() => setIsCvModalOpen(true)}
           />
         )}
 
-        {/* Dedicated Standalone Courses Page */}
         {activeView === 'courses' && (
           <CoursesPage
             onBackToHome={() => navigateTo('home')}
-            onOpenAgent={handleOpenAgent}
-            onOpenCvModal={() => setIsCvModalOpen(true)}
           />
         )}
+
       </main>
 
       {/* Site Footer */}
@@ -180,11 +162,6 @@ function PortfolioApp() {
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
-      />
-
-      <CourseModal
-        course={selectedCourse}
-        onClose={() => setSelectedCourse(null)}
       />
 
       <CVModal
