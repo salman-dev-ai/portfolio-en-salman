@@ -27,7 +27,7 @@ export const coursesData: Course[] = [
       en: 'Master modern full-stack React development with Next.js App Router. Learn Server Components, client boundary patterns, static site generation, incremental regeneration, and seamless production deployments.',
       ar: 'أتقن تطوير الويب الحديث بواسطة مسار Next.js App Router، وتعرّف على مكونات الخادم ومكونات العميل والتوليد الثابت للصفحات وتكتيكات الأداء العالي.',
     },
-    thumbnail: '/assets/images/course_nextjs_1792383957539.jpg',
+    thumbnail: '/assets/images/course_react_1792383957806.jpg',
     featured: true,
     syllabus: {
       en: [

@@ -22,9 +22,14 @@ export const metadata: Metadata = {
       'Personal portfolio of Salman Al-Ansi, AI Engineer, Web Developer & Mobile App Developer. Building intelligent solutions with AI, Next.js, and Mobile technologies.',
   },
   icons: {
-    icon: 'https://core-normal.traeapi.us/api/ide/v1/text_to_image?prompt=Professional%20tech%20logo%20for%20AI%20and%20Web%20Developer%20Salman%2C%20modern%20minimalist%20hexagon%20with%20AI%20circuits%2C%20orange%20and%20dark%20theme&image_size=square',
-    shortcut: 'https://core-normal.traeapi.us/api/ide/v1/text_to_image?prompt=Professional%20tech%20logo%20for%20AI%20and%20Web%20Developer%20Salman%2C%20modern%20minimalist%20hexagon%20with%20AI%20circuits%2C%20orange%20and%20dark%20theme&image_size=square',
-    apple: 'https://core-normal.traeapi.us/api/ide/v1/text_to_image?prompt=Professional%20tech%20logo%20for%20AI%20and%20Web%20Developer%20Salman%2C%20modern%20minimalist%20hexagon%20with%20AI%20circuits%2C%20orange%20and%20dark%20theme&image_size=square',
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-64x64.png', sizes: '64x64', type: 'image/png' },
+      { url: '/favicon-180x180.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon.png', sizes: '512x512', type: 'image/png' },
+    ],
+    shortcut: '/favicon-32x32.png',
+    apple: '/favicon-180x180.png',
   },
 };
 

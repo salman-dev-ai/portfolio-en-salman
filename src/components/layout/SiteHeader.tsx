@@ -332,16 +332,16 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
           <button
             type="button"
             onClick={() => handleNavClick('home')}
-            className={`sh-brand flex items-center gap-2.5 group shrink-0 cursor-pointer text-start rounded-full ${FOCUS}`}
+            className={`sh-brand flex items-center gap-3 group shrink-0 cursor-pointer text-start rounded-full ${FOCUS}`}
           >
-            <div className="relative w-9 h-9 rounded-full bg-[#FF641C] flex items-center justify-center text-white shadow-sm shadow-[#FF641C]/25 transition-transform group-hover:scale-105">
+            <div className="relative w-11 h-11 rounded-full bg-gradient-to-br from-[#FF7A3A] to-[#FF641C] flex items-center justify-center text-white shadow-md shadow-[#FF641C]/25 transition-transform duration-200 group-hover:scale-[1.06]">
               <span className="sh-logo-ring" aria-hidden="true"></span>
               <svg
-                className="relative w-5 h-5"
+                className="relative w-6 h-6"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2.5"
+                strokeWidth="2.4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -350,7 +350,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
                 <path d="M8 6l-6 6 6 6" />
               </svg>
             </div>
-            <span className="text-xl font-bold tracking-tight text-[#080D12] dark:text-white">
+            <span className="text-lg sm:text-xl font-bold tracking-tight text-[#080D12] dark:text-white">
               {siteConfig.shortName}
             </span>
           </button>
