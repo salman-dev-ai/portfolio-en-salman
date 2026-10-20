@@ -54,11 +54,11 @@ export const FeaturedCoursesSection: React.FC<FeaturedCoursesSectionProps> = ({
 
   // Same selection as before, ordered along the path from beginner to advanced (stable sort).
   const featuredCourses = coursesData
-    .filter((c) => c.featured)
+    .filter((c: Course) => c.featured)
     .slice(0, 3)
-    .map((c, i) => ({ c, i }))
-    .sort((a, b) => (LEVEL_ORDER[a.c.difficulty] ?? 99) - (LEVEL_ORDER[b.c.difficulty] ?? 99) || a.i - b.i)
-    .map((x) => x.c);
+    .map((c: Course, i: number) => ({ c, i }))
+    .sort((a: { c: Course; i: number }, b: { c: Course; i: number }) => (LEVEL_ORDER[a.c.difficulty] ?? 99) - (LEVEL_ORDER[b.c.difficulty] ?? 99) || a.i - b.i)
+    .map((x: { c: Course; i: number }) => x.c);
 
   const count = featuredCourses.length;
   const [activeIndex, setActiveIndex] = useState(0);
@@ -103,8 +103,8 @@ export const FeaturedCoursesSection: React.FC<FeaturedCoursesSectionProps> = ({
   const active = featuredCourses[safeIndex];
   const progressPct = count > 1 ? (safeIndex / (count - 1)) * 100 : 0;
 
-  const totalLessons = featuredCourses.reduce((sum, c) => sum + (Number(c.lessonsCount) || 0), 0);
-  const totalHours = Math.round(featuredCourses.reduce((sum, c) => sum + (Number(c.durationHours) || 0), 0) * 10) / 10;
+  const totalLessons = featuredCourses.reduce((sum: number, c: Course) => sum + (Number(c.lessonsCount) || 0), 0);
+  const totalHours = Math.round(featuredCourses.reduce((sum: number, c: Course) => sum + (Number(c.durationHours) || 0), 0) * 10) / 10;
 
   const goTo = (idx: number, focus = false) => {
     setActiveIndex(idx);
@@ -220,7 +220,7 @@ export const FeaturedCoursesSection: React.FC<FeaturedCoursesSectionProps> = ({
                 style={{ gridTemplateColumns: `repeat(${count}, minmax(0, 1fr))` }}
                 onKeyDown={handleTabKeyDown}
               >
-                {featuredCourses.map((course, index) => {
+                {featuredCourses.map((course: Course, index: number) => {
                   const selected = index === safeIndex;
                   const done = index < safeIndex;
                   return (

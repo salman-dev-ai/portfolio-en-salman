@@ -92,7 +92,7 @@ export const CourseModal: React.FC<CourseModalProps> = ({ course, onClose }) => 
             {t('courses.modalSyllabus')}
           </h3>
           <div className="space-y-2">
-            {course.syllabus[locale].map((item, idx) => (
+            {course.syllabus[locale].map((item: string, idx: number) => (
               <div
                 key={idx}
                 className="flex items-start gap-2.5 p-3 rounded-xl bg-[#131D2A] border border-[#1E2630] text-xs text-gray-200"

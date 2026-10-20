@@ -2,7 +2,7 @@
 // الوظيفة: دوال لتصفية المشاريع حسب الفئة والبحث والتقنية والاستخراج الفريد
 // المحتوى: filterProjects و getUniqueProjectCategories و getUniqueProjectTechnologies
 // الاعتماديات: يستورد نوع Project من types/portfolio.ts
-import type { Project } from '../types/portfolio.ts';
+import type { Project, Course, CourseDifficulty } from '../types/portfolio.ts';
 
 /**
  * Filter projects by category, search query, and technology
@@ -74,4 +74,41 @@ export function getUniqueProjectTechnologies(projects: Project[]): string[] {
     p.technologies.forEach((t) => set.add(t));
   });
   return Array.from(set).sort();
+}
+
+/**
+ * Filter courses by difficulty and search query
+ */
+export function filterCourses(
+  courses: Course[],
+  options: {
+    difficulty?: CourseDifficulty | 'all';
+    searchQuery?: string;
+  }
+): Course[] {
+  const { difficulty, searchQuery } = options;
+  const normalizedQuery = (searchQuery || '').trim().toLowerCase();
+
+  return courses.filter((course) => {
+    // Difficulty match
+    if (difficulty && difficulty !== 'all') {
+      if (course.difficulty !== difficulty) return false;
+    }
+
+    // Search query match across title and short description
+    if (normalizedQuery) {
+      const titleMatch =
+        course.title.en.toLowerCase().includes(normalizedQuery) ||
+        course.title.ar.toLowerCase().includes(normalizedQuery);
+      const descMatch =
+        course.shortDescription.en.toLowerCase().includes(normalizedQuery) ||
+        course.shortDescription.ar.toLowerCase().includes(normalizedQuery);
+
+      if (!titleMatch && !descMatch) {
+        return false;
+      }
+    }
+
+    return true;
+  });
 }

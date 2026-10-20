@@ -54,3 +54,30 @@ export interface Testimonial {
   };
   avatar: string;
 }
+
+export type CourseDifficulty = 'Beginner' | 'Intermediate' | 'Advanced';
+
+export interface Course {
+  id: string;
+  title: {
+    en: string;
+    ar: string;
+  };
+  thumbnail: string;
+  difficulty: CourseDifficulty;
+  lessonsCount: number;
+  durationHours: number;
+  shortDescription: {
+    en: string;
+    ar: string;
+  };
+  fullDescription: {
+    en: string;
+    ar: string;
+  };
+  syllabus: {
+    en: string[];
+    ar: string[];
+  };
+  featured?: boolean;
+}
